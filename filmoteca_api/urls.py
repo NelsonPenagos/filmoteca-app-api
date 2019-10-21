@@ -1,9 +1,11 @@
 from django.conf.urls import url
-from django.urls import path
+from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
-from filmoteca_api.views import *
+from filmoteca_api.views.movie_views import *
+from filmoteca_api.views.user_views import *
 
 urlpatterns = [
+    ##path('user/', user_list, name="create_user"),
     path('movie/', movie_list),
     path('movie/<int:pk>', movie_detail),
     path('movie/name/<str:name>', movie_name),

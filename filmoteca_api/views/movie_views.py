@@ -1,13 +1,18 @@
-from .models import User, Movie
-from .serializers import UserSerializer, MovieSerializer
+from filmoteca_api.models.movie_models import Movie
+from filmoteca_api.serializers.movie_serializers import MovieSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 
 @api_view(['GET', 'POST'])
+#@authentication_classes([TokenAuthentication,])
+#@permission_classes([IsAuthenticated,])
 def movie_list(request):
     """List all movies or Create new movie"""
+    
     if request.method == 'GET':
         queryset = Movie.objects.all()
         serializer = MovieSerializer(queryset, many=True)
