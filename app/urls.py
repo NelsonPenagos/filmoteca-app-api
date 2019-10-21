@@ -5,7 +5,4 @@ from rest_framework.authtoken import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('filmoteca_api.urls')),
-    path('api-token-auth/', views.obtain_auth_token, name="api-token-auth"),
-
-
 ]

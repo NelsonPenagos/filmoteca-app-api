@@ -3,13 +3,9 @@ from filmoteca_api.serializers.movie_serializers import MovieSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
 
 
 @api_view(['GET', 'POST'])
-#@authentication_classes([TokenAuthentication,])
-#@permission_classes([IsAuthenticated,])
 def movie_list(request):
     """List all movies or Create new movie"""
     
