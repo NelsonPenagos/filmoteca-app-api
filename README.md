@@ -13,3 +13,15 @@ http://localhost:8000/api/v1/movie/name/:name | GET | Get a single movie for nam
 http://localhost:8000/api/v1/movie/genre/:genre | GET | Get a single movie for genre
 http://localhost:8000/api/v1/movie/director/:director/ | GET | Get a single movie for director
 http://localhost:8000/api/v1/movie/recomendation | GET | Get all recomendation
+
+# Login y Token
+```
+http://localhost:8000/api/v1/login/
+
+{
+    "key": "<TOKEN>"
+}
+
+http://127.0.0.1:8000/api/v1/movies/ "Authorization: Token <YOUR_TOKEN>"
+```
+
